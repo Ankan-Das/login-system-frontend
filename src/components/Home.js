@@ -12,8 +12,10 @@ const Home = () => {
         const checkAuth = async () => {
             console.log("INSIDE HOME")
             console.log('${API_URL}')
+            console.log(`${API_URL}`)
+            console.log(API_URL)
             try {
-                const response = await axios.get('${API_URL}/home');
+                const response = await axios.get(`${API_URL}/home`);
                 console.log(response.data);
             } catch (error) {
                 navigate('/');
@@ -24,7 +26,7 @@ const Home = () => {
 
     const handleLogout = async () => {
         try {
-            await axios.post('${API_URL}/logout', {}, { withCredentials: true });
+            await axios.post(`${API_URL}/logout`, {}, { withCredentials: true });
             // alert("Logout successful");
             navigate('/');  // Redirect to the login page or landing page
         } catch (error) {
