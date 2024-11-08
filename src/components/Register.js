@@ -4,6 +4,8 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import './Register.css'
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Register = () => {
     const [formData, setFormData] = useState({ name: '', username: '', password: '', confirmPassword: '', role: '' });
     const [message, setMessage] = useState('');
@@ -14,7 +16,7 @@ const Register = () => {
         const checkIfLoggedIn = async () => {
             try {
                 // Check the session status by making a request to the backend
-                const response = await axios.get('http://localhost:5000/check_session', { withCredentials: true });
+                const response = await axios.get('${API_URL}/check_session', { withCredentials: true });
                 if (response.status === 200 && response.data.logged_in) {
                     navigate('/home');  // Redirect to /home if user is already logged in
                 }
@@ -34,7 +36,7 @@ const Register = () => {
         e.preventDefault();
         try {
             console.log(formData)
-            const response = await axios.post('http://localhost:5000/register', formData);
+            const response = await axios.post('${API_URL}/register', formData);
             setMessageColor('green');
             setMessage(response.data.message);
             setTimeout(() => {
