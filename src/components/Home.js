@@ -11,6 +11,7 @@ const Home = () => {
     useEffect(() => {
         const checkAuth = async () => {
             console.log("INSIDE HOME")
+            console.log('${API_URL}')
             try {
                 const response = await axios.get('${API_URL}/home');
                 console.log(response.data);
