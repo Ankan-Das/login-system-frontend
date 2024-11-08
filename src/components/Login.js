@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 import './Login.css';
 
 const API_URL = process.env.REACT_APP_API_URL;
+console.log("API_URL")
+console.log(API_URL)
 
 const Login = () => {
     const [formData, setFormData] = useState({ username: '', password: '', role: '' });
@@ -33,9 +35,11 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`${API_URL}/login`, formData);
+            console.log('before login request')
+            const response = await axios.post(`${API_URL}/login`, formData, { withCredentials: true });
             console.log("inside login", response)
             setMessage(response.data.message);
+
             navigate('/home');
         } catch (error) {
             setMessage('Invalid credentials');
