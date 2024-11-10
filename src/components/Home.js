@@ -45,7 +45,7 @@ const Home = () => {
     return (
         <div className='home-container'>
             <h2>Welcome to the Home Page</h2>
-            <button onClick={handleLogout}>Logout</button>
+            <button type='submit' class='logout-button' onClick={handleLogout}>Logout</button>
         </div>
     );
 };

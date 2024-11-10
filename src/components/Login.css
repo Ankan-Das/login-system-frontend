@@ -56,22 +56,22 @@ h2 {
 .tab-button.session {
     min-height: 37px;
     font-weight: bold;
-    color: #007bff;
-    border-bottom: 4px solid #007bff;
+    color: #61719C;
+    border-bottom: 4px solid #61719C;
 }
 
 .tab-button.token {
     min-height: 37px;
     font-weight: bold;
-    color: #f08b43;
-    border-bottom: 4px solid #f08b43;
+    color: #e1745c;
+    border-bottom: 4px solid #e1745c;
 }
 
 .tab-button.sso {
     min-height: 37px;
     font-weight: bold;
-    color: #0fbe70;
-    border-bottom: 4px solid #0fbe70;
+    color: #5f8826;
+    border-bottom: 4px solid #5f8826;
 }
 
 /* Form container with padding adjustments */
@@ -105,7 +105,7 @@ button[type="submit"] {
     padding: 12px;
     font-size: 16px;
     color: white;
-    background-color: #007bff;
+    background-color: #61719C;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -116,23 +116,34 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #323a50;
 }
 
 button[type="submit"].token {
-    background-color: #f08b43;
+    background-color: #e1745c;
 }
 
 button[type="submit"].token:hover {
-    background-color: #c56d2e;
+    background-color: #924a38;
 }
 
 button[type="submit"].sso {
-    background-color: #0fbe70;
+    background-color: #5f8826;
 }
 
 button[type="submit"].sso:hover {
-    background-color: #07864d;
+    background-color: #324715;
+}
+
+button[type="submit"].register-button {
+    color: rgb(38, 63, 134);
+    background-color: rgba(241,241,237,1);
+    border: 2px solid rgb(38, 63, 134);
+}
+
+button[type="submit"].register-button:hover {
+    color: #e6dcc7;
+    background-color: rgb(38, 63, 134);
 }
 
 /* Message styling */

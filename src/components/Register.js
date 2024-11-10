@@ -7,7 +7,7 @@ import './Register.css'
 const API_URL = process.env.REACT_APP_API_URL;
 
 const Register = () => {
-    const [formData, setFormData] = useState({ name: '', username: '', password: '', confirmPassword: '', role: '' });
+    const [formData, setFormData] = useState({ name: '', username: '', password: '', confirmPassword: '', role: 'admin' });
     const [message, setMessage] = useState('');
     const [messageColor, setMessageColor] = useState('');
     const navigate = useNavigate();
@@ -56,11 +56,11 @@ const Register = () => {
                 <input type="text" name="username" placeholder="Username" onChange={handleChange} required />
                 <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
                 <input type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} required />
-                <input type="text" name="role" placeholder="Role" onChange={handleChange} required />
+                {/* <input type="text" name="role" placeholder="Role" onChange={handleChange} required /> */}
                 <button type="submit">Register</button>
-            </form>
             {message && <p style={{ color: messageColor }}>{message}</p>}
-            <button onClick={() => navigate('/')}>Go to Login</button>
+            <button type='submit' className='login-button' onClick={() => navigate('/')}>Go to Login</button>
+            </form>
         </div>
     );
 };

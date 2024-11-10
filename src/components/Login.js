@@ -98,6 +98,7 @@ const Login = () => {
                             <button className='sso' type="submit">{selectedTab === 'sso' ? 'Continue with SSO' : 'Login'}</button>
                         </>
                     )}
+                <button type='submit' className='register-button' onClick={() => navigate('/register')}>Register</button>
                 </form>
 
             </div>
